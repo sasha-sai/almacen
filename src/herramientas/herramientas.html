@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas</title>
+    <link rel="stylesheet" href="../herramientas/herramientas-style.css">
+</head>
+<body>
+    <!-- Botón para alternar el Navbar -->
+    <div class="menu-toggle" onclick="toggleNavbar()">☰</div>
+
+    <!-- Navbar Lateral -->
+    <div class="navbar" id="navbar">
+        <h2 class="logo">Menu</h2>
+        <ul>
+            <li><a onclick="window.location.href='../menu/menu.html'">Envio</a></li>
+            <li><a onclick="window.location.href='../herramientas/herramientas.html'">Herramientas</a></li>
+            <li><a onclick="window.location.href='../usuarios/usuarios.html'">Usuarios</a></li>
+            <li><a onclick="window.location.href='../movimientos/movimientos.html'">Movimientos</a></li>
+            <li><a onclick="window.location.href='../index.html'">Cerrar Sesion</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="form-container">
+            <h1>Gestión de Herramientas</h1>
+
+            <!-- Sección para Registrar Nuevas Herramientas -->
+            <div class="register-tool">
+                <h2>Registrar o Editar Herramienta</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="item">Item</label>
+                        <input type="text" id="item" placeholder="Ingrese Item" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codigo">Código</label>
+                        <input type="text" id="codigo" placeholder="Ingrese Código" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Ingrese Nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stock">Stock Actual</label>
+                        <input type="number" id="stock" placeholder="Ingrese Stock Actual" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="disponible">Stock Disponible</label>
+                        <input type="number" id="disponible" placeholder="Ingrese Stock Disponible" required>
+                    </div>
+
+                    <button type="submit" id="submit-btn">Registrar Herramienta</button>
+                    <button type="button" id="save-btn" style="display:none;" onclick="saveTool()">Guardar Cambios</button>
+                </form>
+            </div>
+
+            <!-- Historial de Movimientos -->
+            <div class="tool-history">
+                <h2>Historial de Herramientas</h2>
+                <table id="history-table">
+                    <thead>
+                        <tr>
+                            <th>ITEM</th>
+                            <th>CÓDIGO</th>
+                            <th>NOMBRE</th>
+                            <th>STOCK ACTUAL</th>
+                            <th>STOCK DISPONIBLE</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se mostrarán los movimientos de las herramientas -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+    <script src="herramientas.js"></script>
+</body>
+</html>

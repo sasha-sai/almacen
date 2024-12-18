@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Envío</title>
+    <link rel="stylesheet" href="../menu/style-menu.css">
+</head>
+<body>
+    <!-- Navbar Lateral -->
+    <div class="navbar">
+        <h2 class="logo">Menu</h2>
+        <ul>
+            <li><a onclick="window.location.href='../menu/menu.html'">Envio</a></li>
+            <li><a onclick="window.location.href='../herramientas/herramientas.html'">Herramientas</a></li>
+            <li><a onclick="window.location.href='../usuarios/usuarios.html'">Usuarios</a></li>
+            <li><a onclick="window.location.href='../movimientos/movimientos.html'">Movimientos</a></li>
+            <li><a onclick="window.location.href='../index.html'">Cerrar Sesion</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="form-container">
+            <h1>Generar Envío</h1>
+            <form id="envio-form">
+                <!-- Selección de Obra -->
+                <div class="form-group">
+                    <label for="obra">Obra</label>
+                    <select id="obra" required>
+                        <option value="" disabled selected>Seleccione una obra</option>
+                        <option value="obra1">Obra 1</option>
+                        <option value="obra2">Obra 2</option>
+                    </select>
+                </div>
+
+                <!-- Selección de Transporte -->
+                <div class="form-group">
+                    <label for="transporte">Transporte</label>
+                    <select id="transporte" required>
+                        <option value="" disabled selected>Seleccione transporte</option>
+                        <option value="persona1">Persona 1</option>
+                        <option value="persona2">Persona 2</option>
+                    </select>
+                </div>
+
+                <!-- Buscador de Herramientas -->
+                <div class="form-group">
+                    <label for="herramienta">Buscar Herramienta</label>
+                    <input type="text" id="herramienta" placeholder="Escriba el nombre de la herramienta">
+                    <select id="herramienta-list" size="5" onchange="addTool()">
+                        <!-- Opciones de herramientas se añadirán dinámicamente -->
+                    </select>
+                </div>
+
+                <!-- Lista de Herramientas Seleccionadas -->
+                <ul id="selected-tools">
+                    <!-- Herramientas seleccionadas aparecerán aquí -->
+                </ul>
+
+                <!-- Botón de Solicitar Envío -->
+                <div class="form-group">
+                    <button type="submit">Solicitar Envío</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>

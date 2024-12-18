@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="../usuarios/usuarios.css">
+</head>
+<body>
+    <!-- Botón para alternar el Navbar -->
+    <div class="menu-toggle" onclick="toggleNavbar()">☰</div>
+
+    <!-- Navbar Lateral -->
+    <div class="navbar" id="navbar">
+        <h2 class="logo">Menu</h2>
+        <ul>
+            <li><a onclick="window.location.href='../menu/menu.html'">Envio</a></li>
+            <li><a onclick="window.location.href='../herramientas/herramientas.html'">Herramientas</a></li>
+            <li><a onclick="window.location.href='../usuarios/usuarios.html'">Usuarios</a></li>
+            <li><a onclick="window.location.href='../movimientos/movimientos.html'">Movimientos</a></li>
+            <li><a onclick="window.location.href='../index.html'">Cerrar Sesion</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="form-container">
+            <h1>Gestión de Usuarios</h1>
+
+            <!-- Sección para Registrar Nuevos Usuarios -->
+            <div class="register-user">
+                <h2>Registrar o Editar Usuario</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="dni">DNI</label>
+                        <input type="text" id="dni" placeholder="Ingrese DNI" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Ingrese Nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rol">Rol</label>
+                        <select id="rol">
+                            <option value="admin">Administrador</option>
+                            <option value="user">Usuario</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="submit-btn">Registrar Usuario</button>
+                    <button type="button" id="save-btn" style="display:none;" onclick="saveUser()">Guardar Cambios</button>
+                </form>
+            </div>
+
+            <!-- Tabla de Usuarios -->
+            <div class="user-list">
+                <h2>Lista de Usuarios</h2>
+                <table id="user-table">
+                    <thead>
+                        <tr>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se mostrarán los usuarios registrados -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+    <script src="usuarios.js"></script>
+</body>
+</html>
